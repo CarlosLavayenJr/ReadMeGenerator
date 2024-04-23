@@ -11,7 +11,7 @@ An application to be used to help with process of creating a professional ReadMe
 - [Questions](#questions)
 
 ## Installation
-Make sure you have node.js installed. You canmake sure of this by running (node -v)
+Make sure you have node.js installed. You can make sure of this by running (node -v)
 
 ## Usage
 by going to the repository folder location you can input (node index.js) within your command prompt
