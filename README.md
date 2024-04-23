@@ -1,6 +1,6 @@
 # Read-Me-File-Generator
 
-An application to be used to help with process of creating a professional ReadMeFile
+An application to be used to help with process of creating a professional ReadMeFile.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -14,10 +14,11 @@ An application to be used to help with process of creating a professional ReadMe
 Make sure you have node.js installed. You can make sure of this by running (node -v)
 
 ## Usage
-by going to the repository folder location you can input (node index.js) within your command prompt
+By going to the repository folder location you can input (node index.js) within your command prompt.
+Or I've also included an option for a CLICK-ME.bat.
 
 ## Contributing
-
+CarlosLavayenJr
 
 ## Tests
 https://youtu.be/8MvcfWqQyrU
