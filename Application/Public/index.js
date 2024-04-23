@@ -2,9 +2,16 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./generateMarkdown'); // Assuming generateMarkdown.js is in the same directory
+const path = require('path');
 
 // Create an array of questions for user input
 const questions = [
+  {
+    type: 'input',
+    name: 'filePath',
+    message: 'Enter the file path where you want the README.md to be saved (MAKE SURE TO INCLUDE B-SLASHREADME.md AT THE END OF PATH) (press Enter for default):',
+    default: './README.md'
+  },
   {
     type: 'input',
     name: 'title',
@@ -55,24 +62,29 @@ const questions = [
 
 // Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (err) => {
+  // Resolve the path to ensure it's correct, regardless of user input
+  const resolvedPath = path.resolve(fileName);
+
+  fs.writeFile(resolvedPath, data, (err) => {
     if (err) {
       console.error('Error writing to file:', err);
     } else {
-      console.log('Successfully created README.md!');
+      console.log(`Successfully created README.md at ${resolvedPath}!`);
     }
   });
 }
 
 // Create a function to initialize app
 function init() {
+  const inquirer = require('inquirer');
   inquirer.prompt(questions).then((answers) => {
     const markdownContent = generateMarkdown(answers);
-    writeToFile('README.md', markdownContent);
+    writeToFile(answers.filePath, markdownContent); // Pass the user-defined file path
   }).catch((error) => {
     console.error('An error occurred:', error);
   });
 }
+
 
 // Function call to initialize app
 init();
